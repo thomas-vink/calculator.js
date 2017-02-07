@@ -21,26 +21,67 @@ document.getElementById("btn7").addEventListener("click",btn);
 document.getElementById("btn8").addEventListener("click",btn);
 document.getElementById("btn9").addEventListener("click",btn);
 
+					//operators
+var getal1 = 0;
+var operator="";
 
+document.getElementById("opr+").addEventListener("click",Plus);
+document.getElementById("opr-").addEventListener("click",min);
+document.getElementById("opr*").addEventListener("click",x);
+document.getElementById("opr/").addEventListener("click",deel);
+document.getElementById("opr=").addEventListener("click",Calculate);
 
+							//plus
 
-//Operators
-var operators;
-
-function op(){
-	var operators = 'op';
-	console.log ('operators')
+function Plus() {
+	getal1 = parseInt(document.getElementById('register').innerHTML);
+	document.getElementById('register').innerHTML = '';
+	operator="+"
 }
 
+							//keer
 
-document.getElementById("opr+").addEventListener("click",op);
-document.getElementById("opr-").addEventListener("click",op);
-document.getElementById("opr/").addEventListener("click",op);
-document.getElementById("opr=").addEventListener("click",op);
-document.getElementById("opr*").addEventListener("click",op);
+function x() {
+	getal1 = parseInt(document.getElementById('register').innerHTML);
+	document.getElementById('register').innerHTML = '';
+	operator="*"
+}							
+
+							//deelen
+
+function deel() {
+	getal1 = parseInt(document.getElementById('register').innerHTML);
+	document.getElementById('register').innerHTML = '';
+	operator="/"
+}							
+
+							//min
+
+function min() {
+	getal1 = parseInt(document.getElementById('register').innerHTML);
+	document.getElementById('register').innerHTML = '';
+	operator="-"
+}							
 
 
 
+function Calculate() {
+	var getalInDisplay = parseInt(document.getElementById('register').innerHTML);
+	
+	if (operator == '+') {
+		var uitkomst = getal1 + getalInDisplay;
+    }
+    if (operator == '-') {
+    	var uitkomst = getal1 - getalInDisplay;
+    }
+    if (operator == '*') {
+    	var uitkomst = getal1 * getalInDisplay;
+    }
+    if (operator == '/') {
+    	var uitkomst = getal1 / getalInDisplay;
+    }
+	document.getElementById('register').innerHTML = uitkomst;
+}
 
 
 
