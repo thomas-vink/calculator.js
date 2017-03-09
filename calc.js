@@ -6,10 +6,10 @@ function clear(){
 }
 
 
-//clear
+						//clear
 document.getElementById("btnc").addEventListener("click",clear)
 
-//NUMBERS
+						//NUMBERS
 document.getElementById("btn0").addEventListener("click",btn);
 document.getElementById("btn1").addEventListener("click",btn);
 document.getElementById("btn2").addEventListener("click",btn);
@@ -20,8 +20,9 @@ document.getElementById("btn6").addEventListener("click",btn);
 document.getElementById("btn7").addEventListener("click",btn);
 document.getElementById("btn8").addEventListener("click",btn);
 document.getElementById("btn9").addEventListener("click",btn);
+document.getElementById('btnd').addEventListener("click",btn);
 
-					//operators
+						//operators
 var getal1 = 0;
 var operator="";
 
@@ -34,7 +35,7 @@ document.getElementById("opr=").addEventListener("click",Calculate);
 							//plus
 
 function Plus() {
-	getal1 = parseInt(document.getElementById('register').innerHTML);
+	getal1 = parseFloat(document.getElementById('register').innerHTML);
 	document.getElementById('register').innerHTML = '';
 	operator="+"
 }
@@ -42,7 +43,7 @@ function Plus() {
 							//keer
 
 function x() {
-	getal1 = parseInt(document.getElementById('register').innerHTML);
+	getal1 = parseFloat(document.getElementById('register').innerHTML);
 	document.getElementById('register').innerHTML = '';
 	operator="*"
 }							
@@ -50,7 +51,7 @@ function x() {
 							//deelen
 
 function deel() {
-	getal1 = parseInt(document.getElementById('register').innerHTML);
+	getal1 = parseFloat(document.getElementById('register').innerHTML);
 	document.getElementById('register').innerHTML = '';
 	operator="/"
 }							
@@ -58,7 +59,7 @@ function deel() {
 							//min
 
 function min() {
-	getal1 = parseInt(document.getElementById('register').innerHTML);
+	getal1 = parseFloat(document.getElementById('register').innerHTML);
 	document.getElementById('register').innerHTML = '';
 	operator="-"
 }							
@@ -66,19 +67,23 @@ function min() {
 
 
 function Calculate() {
-	var getalInDisplay = parseInt(document.getElementById('register').innerHTML);
+	var getalInDisplay = parseFloat(document.getElementById('register').innerHTML);
 	
 	if (operator == '+') {
 		var uitkomst = getal1 + getalInDisplay;
+		uitkomst = uitkomst.toFixed(2);
     }
     if (operator == '-') {
     	var uitkomst = getal1 - getalInDisplay;
+    	uitkomst = uitkomst.toFixed(2);
     }
     if (operator == '*') {
     	var uitkomst = getal1 * getalInDisplay;
+    	uitkomst = uitkomst.toFixed(2);
     }
     if (operator == '/') {
     	var uitkomst = getal1 / getalInDisplay;
+    	uitkomst = uitkomst.toFixed(2);
     }
 	document.getElementById('register').innerHTML = uitkomst;
 }
